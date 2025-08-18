@@ -1,0 +1,35 @@
+.list-img{
+  width: 50px;
+  border-radius: 4px;
+}
+
+.list-img-detail-container{
+  padding: 0px 10px;
+}
+
+.list-td{
+  display: flex;
+  align-items: center;
+}
+
+.list-tr:hover{
+  background-color: rgba(250, 250, 250, 0.103);
+}
+
+.list-name{
+  font-size: 18px;
+  margin: 0px;
+}
+.list-artist{
+  font-size: 12px;
+  margin: 0px;
+}
+
+.paly-button{
+  border: none;
+  background-color: transparent;
+}
+
+.paly-icon{
+  font-size: 30px;
+}

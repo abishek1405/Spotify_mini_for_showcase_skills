@@ -1,0 +1,21 @@
+.main{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.NotFound-btn{
+    border: none;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 50px;
+}
+
+
+.NotFound-content{
+    text-decoration: none;
+    color: white;
+}
