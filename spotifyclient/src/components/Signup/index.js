@@ -1,7 +1,7 @@
 import { Component } from 'react'
 import './index.css'
 import logo from '../../assets/logo.png';
-import { Link } from "react-router-dom";
+import { Link,Redirect } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { ImAppleinc } from "react-icons/im";
 import Cookies from 'js-cookie'
@@ -40,7 +40,8 @@ class Signup extends Component {
 
     onSuccess = (jwtToken)=>{
         Cookies.set('jwt_token', jwtToken, {expires: 30})
-        this.props.history.replace('/')
+        return <Redirect to="/login" />
+        //this.props.history.replace('/')
     }
 
     onFailed = (errorMsg) =>{
