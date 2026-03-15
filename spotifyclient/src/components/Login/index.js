@@ -105,7 +105,7 @@ class Login extends Component {
                 </div>
 
                  <div className="or-container">
-                    <p>----------------------------------------------</p>
+                    <p>--------- username: abi / password: 1111111 ---------</p>
                 </div>
 
                 <form onSubmit={this.submitForm}>
