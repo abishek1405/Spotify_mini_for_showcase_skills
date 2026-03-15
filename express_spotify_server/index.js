@@ -31,26 +31,35 @@ const userSchema = new mongoose.Schema({
 
 const User = mongoose.model("User", userSchema);
 
-
 app.post("/signup", async (req, res) => {
   try {
     const { username, password } = req.body;
 
+    if (!username || !password) {
+      return res.status(400).json({ message: "Username and password required" });
+    }
+
     const userExist = await User.findOne({ username });
+
     if (userExist) {
       return res.status(400).json({ message: "User already exists" });
     }
 
-    if (password.length <= 6) {
-      return res.status(400).json({ message: "Password is too short" });
+    if (password.length < 6) {
+      return res.status(400).json({ message: "Password must be at least 6 characters" });
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    const newUser = new User({ username, password: hashedPassword });
+    const newUser = new User({
+      username,
+      password: hashedPassword
+    });
+
     await newUser.save();
 
     res.status(200).json({ message: "User Created Successfully" });
+
   } catch (e) {
     console.error(e.message);
     res.status(500).json({ message: "Server Error" });
@@ -72,7 +81,7 @@ app.post("/login", async (req, res) => {
       return res.status(400).json({ message: "Invalid Password" });
     }
 
-    const jwtToken = jwt.sign({ username }, process.env.JWT_SECRET);
+    const jwtToken = jwt.sign({ username }, process.env.JWT_SECRET, {expiresIn: "1h"});
 
     res.json({ jwt_token: jwtToken });
   } catch (e) {
