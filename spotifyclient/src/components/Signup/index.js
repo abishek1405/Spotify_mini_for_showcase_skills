@@ -52,7 +52,7 @@ class Signup extends Component {
         const {username,password,usernameerr,passworderr} = this.state
         if(!usernameerr && !passworderr){
             const userdata = {username,password}
-            const url = 'http://localhost:2000/signup'
+            const url = 'https://spotify-mini-for-showcase-skills.onrender.com/signup'
             const option = {
                 method:'POST',
                 headers:{

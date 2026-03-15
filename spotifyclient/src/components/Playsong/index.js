@@ -21,9 +21,9 @@ class Playsong extends Component {
 
     getsongsData=async()=>{
         const {id} = this.props.match.params
-        const songdata = await fetch(`http://localhost:2000/getsongs/${id}`)
+        const songdata = await fetch(`https://spotify-mini-for-showcase-skills.onrender.com/getsongs/${id}`)
         const currentSong = await songdata.json()
-        const url = `http://localhost:2000/getsongs`
+        const url = `https://spotify-mini-for-showcase-skills.onrender.com/getsongs`
         const option = {
         method: 'GET',
         }
@@ -33,7 +33,7 @@ class Playsong extends Component {
     }   
     
     sontActivation = async (id) =>{
-        const songdata = await fetch(`http://localhost:2000/getsongs/${id}`)
+        const songdata = await fetch(`https://spotify-mini-for-showcase-skills.onrender.com/getsongs/${id}`)
         const currentSong = await songdata.json()
         this.setState({currentSong:currentSong})
     }
@@ -59,7 +59,7 @@ class Playsong extends Component {
                         <div className='song-container'>
                             <div className='song-details'>
                                 <div className='song-avatar'>
-                                    <img className='song-avatar-img' src={`http://localhost:2000${avatar}`} alt={name} />
+                                    <img className='song-avatar-img' src={`https://spotify-mini-for-showcase-skills.onrender.com${avatar}`} alt={name} />
                                 </div>
                                 <div className='song-det'>
                                     <p className=''>Public Playlist</p>
@@ -87,7 +87,7 @@ class Playsong extends Component {
                                 <AudioPlayer
                                     className='player mb-4'
                                     autoPlay
-                                    src={`http://localhost:2000${file}`}
+                                    src={`https://spotify-mini-for-showcase-skills.onrender.com${file}`}
                                     onPlay={e => console.log("onPlay")}
                                     volume={0.1}
                                     showSkipControls={true}

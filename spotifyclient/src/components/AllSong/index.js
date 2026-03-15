@@ -28,7 +28,7 @@ class Allsong extends Component {
     return(
       <div className='songs-container'>
         <div className='avatar-container'>
-          <img className='avatar' src={`http://localhost:2000${avatar}`} alt={name} />
+          <img className='avatar' src={`https://spotify-mini-for-showcase-skills.onrender.com${avatar}`} alt={name} />
           <Link to={`/playsong/${id}`}><button type='button' onClick={this.songactive} className='play-btn bg-green'><FaPlay /></button></Link>
         </div>
         <h1 className='song-name green'>{name}</h1>

@@ -22,7 +22,7 @@ class ListSongs extends Component {
                 <td>{index+1}</td>
                 <td className="list-td">
                     <div className='list-img-contianer'>
-                        <img src={`http://localhost:2000${avatar}`} className='list-img' alt={name}/>
+                        <img src={`https://spotify-mini-for-showcase-skills.onrender.com${avatar}`} className='list-img' alt={name}/>
                     </div>
                     <div className='list-img-detail-container'>
                         <h1 className='list-name'>{name}</h1>

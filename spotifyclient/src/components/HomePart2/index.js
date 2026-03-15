@@ -22,7 +22,7 @@ class HomePart2 extends Component {
     }
 
     getallsongsData=async()=>{
-        const url = `http://localhost:2000/getsongs`
+        const url = `https://spotify-mini-for-showcase-skills.onrender.com/getsongs`
         const option = {
         method: 'GET',
         }
